@@ -1,0 +1,88 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ISawItFirst</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ISawItFirst.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/node_modules/bootstrap-icons/font/bootstrap-icons.css" />
+</head>
+
+<body>
+    <div id="bodytop">
+        <div id="bodytop-top">
+            <div id="header">
+                <div id="logo">
+                    <a href="" class="text-decoration-none"><span>I SAW IT FIRST</span></a>
+                </div>
+                <div id="menu">
+                    <ul>
+                        <li><a href="" class="text-decoration-none"><span>Khám phá</span></a></li>
+                        <li><a href="" class="text-decoration-none"><span>Thời trang nam</span></a></li>
+                        <li><a href="" class="text-decoration-none"><span>Thời trang nữ</span></a></li>
+                        <li><a href="" class="text-decoration-none"><span>Bán gì đó</span></a></li>
+                        <li><a href="" class="text-decoration-none"><span>Hỗ trợ</span></a></li>
+                    </ul>
+                </div>
+                <div id="search">
+                    <i class="bi bi-search"></i>
+                    <form action="">
+                        <input type="text">
+                    </form>
+                </div>
+                <div id="account">
+                    @if (SignInManager.IsSignedIn(this.User))
+                    {
+                        <a asp-area="Identity" asp-page="/Account/Manage/Index"
+                        title="Xin chào @UserManager.GetUserName(User)!"><i class="bi bi-person-fill"></i></a>
+                        <a asp-area="Identity" asp-page="/Account/Logout" title="Đăng xuất"><i
+                            class="bi bi-box-arrow-right"></i></a>
+                    }
+                    else
+                    {
+                        <a asp-area="Identity" asp-page="/Account/Register" title="Tạo tài khoản"><i
+                            class="bi bi-person-fill-add"></i></a>
+                        <a asp-area="Identity" asp-page="/Account/Login" title="Đăng nhập"><i
+                            class="bi bi-box-arrow-left"></i></a>
+                    }
+                </div>
+            </div>
+            <div id="banner">
+                <div id="banner-text">
+                    <div>STYLE</div>
+                    <p>Our priorities include promoting diversity, equity and inclusion for all; advancing a transparent
+                        and responsible supply chain; innovating sustainable materials and methods of make that focus on
+                        our environmental impact; building community by investing in organizations focused on economic
+                        empowerment, and education and equality; and bringing today’s generation together through sport
+                        and an active lifestyle so they can reach their full potential tomorrow.</p>
+                </div>
+                <div id="banner-img">
+                    <img src="~/img/banner.png" width="100%">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="bodymain">
+        <div id="bodymain-main">
+            @RenderBody()
+        </div>
+    </div>
+    <div id="bodybottom">
+        <div id="bodybottom-bottom">
+
+        </div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+﻿#bodytop {
+  margin: 100px 50px 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50px;
+}
+
+#bodymain {
+  margin: 50px 50px 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50px;
+}
+
+#bodytop-top,
+#bodymain-main {
+  padding: 50px;
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logo span {
+  color: black;
+  font-size: 25px;
+}
+
+#menu ul {
+  margin: 0;
+}
+
+#menu li {
+  display: inline;
+  margin-right: 10px;
+  padding: 10px 0;
+}
+
+#menu li:hover {
+  border-bottom: solid 2px black;
+}
+
+#menu span {
+  color: black;
+  margin: auto;
+}
+
+#search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border-radius: 15px;
+  border: solid 1px black;
+  width: 20%;
+}
+
+#search i {
+  font-size: 20px;
+  margin: 0 10px;
+}
+
+#search input {
+  width: 100%;
+  padding-right: 10px;
+  border-radius: 15px;
+  height: 30px;
+  outline: 0;
+  border: 0;
+}
+
+#account i {
+  margin-right: 20px;
+  color: black;
+  font-size: 30px;
+}
+
+#banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#banner-text div {
+  display: inline;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: linear-gradient(90deg, aquamarine, black);
+  color: transparent;
+  font-size: 120px;
+  font-weight: 900;
+}
+
+#banner-img {
+  margin: 100px;
+  min-width: 500px;
+  animation: banner-img 2s infinite;
+}
+
+@keyframes banner-img {
+  0% {
+    transform: rotate(0)
+  }
+
+  50% {
+    transform: rotate(10deg)
+  }
+
+  100% {
+    transform: rotate(0)
+  }
+}
